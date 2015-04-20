@@ -28,11 +28,13 @@ Save this to `/myapp/conf/nginx.conf`
             }
         }
     }
+    
+Ensure that the `logs` directory is created with `mkdir /myapp/logs`.
 
 ### Run the docker container!
 
 ```
- docker run --name=openresty -d -v /myapp:/nginx -p 127.0.0.1:80:80 justnom/openresty
+ docker run --name=openresty -d -v /myapp:/nginx -p 127.0.0.1:80:80 dynamo/openresty
 ```
 
 Yay! You now have an openresty server running!
