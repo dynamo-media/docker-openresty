@@ -4,7 +4,7 @@ ENV OPENRESTY_VERSION 1.7.10.1
 ENV PATH /usr/local/openresty/nginx/sbin:$PATH
 
 RUN BUILD_PACKAGES="libreadline-dev libncurses5-dev libpcre3-dev libssl-dev perl make build-essential wget libgeoip-dev"; \
-    apt-get update && apt-get install -y $BUILD_PACKAGES ca-certificates tar libpcre3 libgeoip1 \
+    apt-get update && apt-get install -y $BUILD_PACKAGES ca-certificates tar libpcre3 \
     && mkdir /build_tmp && cd /build_tmp \
     && wget http://openresty.org/download/ngx_openresty-${OPENRESTY_VERSION}.tar.gz \
     && tar xf ngx_openresty-${OPENRESTY_VERSION}.tar.gz \
@@ -18,6 +18,7 @@ RUN BUILD_PACKAGES="libreadline-dev libncurses5-dev libpcre3-dev libssl-dev perl
     --with-http_stub_status_module \
     && make && make install \
     && apt-get remove --purge -y $BUILD_PACKAGES \
+    && apt-get install -y libgeoip1 \
     && apt-get autoremove -y \
     && rm -rf /var/lib/apt/lists/* /build_tmp
 
