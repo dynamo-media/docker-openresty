@@ -1,6 +1,6 @@
 FROM debian:wheezy
 
-ENV OPENRESTY_VERSION 1.7.10.1
+ENV OPENRESTY_VERSION 1.9.7.4
 ENV PATH /usr/local/openresty/nginx/sbin:$PATH
 
 RUN BUILD_PACKAGES="libreadline-dev libncurses5-dev libpcre3-dev libssl-dev perl make build-essential wget libgeoip-dev"; \
