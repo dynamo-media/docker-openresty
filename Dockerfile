@@ -6,7 +6,7 @@ ENV PATH /usr/local/openresty/nginx/sbin:$PATH
 RUN BUILD_PACKAGES="libreadline-dev libncurses5-dev libpcre3-dev libssl-dev perl make build-essential wget libgeoip-dev"; \
     apt-get update && apt-get install -y $BUILD_PACKAGES ca-certificates tar libpcre3 \
     && mkdir /build_tmp && cd /build_tmp \
-    && wget http://openresty.org/download/ngx_openresty-${OPENRESTY_VERSION}.tar.gz \
+    && wget http://openresty.org/download/openresty-${OPENRESTY_VERSION}.tar.gz \
     && tar xf ngx_openresty-${OPENRESTY_VERSION}.tar.gz \
     && cd ngx_openresty-${OPENRESTY_VERSION} && ./configure \
     --with-pcre-jit \
