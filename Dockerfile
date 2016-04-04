@@ -7,8 +7,8 @@ RUN BUILD_PACKAGES="libreadline-dev libncurses5-dev libpcre3-dev libssl-dev perl
     apt-get update && apt-get install -y $BUILD_PACKAGES ca-certificates tar libpcre3 \
     && mkdir /build_tmp && cd /build_tmp \
     && wget http://openresty.org/download/openresty-${OPENRESTY_VERSION}.tar.gz \
-    && tar xf ngx_openresty-${OPENRESTY_VERSION}.tar.gz \
-    && cd ngx_openresty-${OPENRESTY_VERSION} && ./configure \
+    && tar xf openresty-${OPENRESTY_VERSION}.tar.gz \
+    && cd openresty-${OPENRESTY_VERSION} && ./configure \
     --with-pcre-jit \
     --with-ipv6 \
     --with-http_geoip_module \
