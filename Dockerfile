@@ -16,6 +16,7 @@ RUN BUILD_PACKAGES="libreadline-dev libncurses5-dev libpcre3-dev libssl-dev perl
     --with-http_realip_module \
     --with-http_ssl_module \
     --with-http_stub_status_module \
+    --with-http_sub_module \
     && make && make install \
     && apt-get remove --purge -y $BUILD_PACKAGES \
     && apt-get install -y libgeoip1 \
